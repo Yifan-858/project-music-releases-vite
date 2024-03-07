@@ -1,8 +1,7 @@
 import React from "react";
 
-
-const CoverImage = ({image}) => {
-    return <img src={image} alt="Album Cover"/>
+const CoverImage = ({ album }) => {
+  return <img src={album.images[0]?.url} alt={album.name} />;
 };
 
 export default CoverImage;
