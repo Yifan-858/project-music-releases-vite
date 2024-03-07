@@ -1,7 +1,6 @@
 import React from "react";
 
-const AlbumName = ({ name }) => {
-  return <h2>{name}</h2>;
+export const AlbumName = ({album}) => {
+  return <h2>{album.name}</h2>;
 };
 
-export default AlbumName;

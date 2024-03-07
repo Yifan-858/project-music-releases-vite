@@ -1,15 +1,15 @@
 import React from "react";
 import data from "./data.json";
-import Album from "./Album";
+import {Header} from "./Header";
+import {Album} from "./Album";
 
-const App = () => {
+export const App = () => {
   return (
     <div className="container">
-      {data.albums.items.map((album, index) => (
-        <Album key={index} album={album} />
-      ))}
+      <Header />
+      <Album />
     </div>
   );
 };
 
-export default App;
+
