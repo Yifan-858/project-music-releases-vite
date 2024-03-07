@@ -5,8 +5,11 @@ export const ArtistName = ({ artists }) => {
     <p>
       {artists.map((artist, index) => (
         <span key={index}>
-          {artist.name}
-          {index !== artist.length - 1 && " "}
+          <a key={artist.id} href={artist.external_urls.spotify}>
+            <p className="artist-name">{artist.name}</p>
+          </a>
+          {index < artists.length - 2 && ", "}
+          {index === artists.length - 2 && " and "}
         </span>
       ))}
     </p>
