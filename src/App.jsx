@@ -1,12 +1,13 @@
 import React from "react";
+import data from "./data.json";
 import Album from "./Album";
-import Header from "./Header";
 
 const App = () => {
   return (
     <div className="container">
-      <Header />
-      <Album />
+      {data.albums.items.map((album, index) => (
+        <Album key={index} album={album} />
+      ))}
     </div>
   );
 };
