@@ -13,7 +13,9 @@ export const CoverImage = ({ album }) => {
           <Icon icon={Heart} />
         </div>
         <div className="play">
+          <a href={album.external_urls.spotify}>
           <Icon icon={Play} />
+          </a>
         </div>
         <div className="dot">
           <Icon icon={Dots} />

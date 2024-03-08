@@ -4,12 +4,13 @@ export const ArtistName = ({ artists }) => {
   return (
     <p>
       {artists.map((artist, index) => (
-        <span key={index}>
+        <div key={index}>
           <a key={artist.id} href={artist.external_urls.spotify}>
-            <p className="artist-name">{artist.name}</p>
+            <span className="artist-name">
+              {artist.name} {index === artists.length - 2 && " & "}
+            </span>
           </a>
-          {index === artists.length - 2 && " & "}
-        </span>
+        </div>
       ))}
     </p>
   );

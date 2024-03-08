@@ -13,10 +13,10 @@ export const Album = () => {
           <div className="album-details">
             <ul className="album-info">
               <li>
-                <AlbumName album={album} />
+                <AlbumName album={album} className="album-name" />
               </li>
               <li>
-                <ArtistName artists={album.artists} />
+                <ArtistName artists={album.artists} className="artist-name" />
               </li>
             </ul>
           </div>
