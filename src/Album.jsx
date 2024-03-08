@@ -10,14 +10,16 @@ export const Album = () => {
       {data.albums.items.map((album) => (
         <div key={album.id} className="album-item">
           <CoverImage album={album} />
-          <ul className="album-info">
-            <li>
-              <AlbumName album={album} />
-            </li>
-            <li>
-              <ArtistName artists={album.artists} />
-            </li>
-          </ul>
+          <div className="album-details">
+            <ul className="album-info">
+              <li>
+                <AlbumName album={album} />
+              </li>
+              <li>
+                <ArtistName artists={album.artists} />
+              </li>
+            </ul>
+          </div>
         </div>
       ))}
     </section>
