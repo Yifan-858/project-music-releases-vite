@@ -28,7 +28,6 @@ body {
 }
 
 /* Header */
-
 .header h1 {
   color: #ffffff;
   font-family: Helvetica, Arial, sans-serif;
@@ -40,7 +39,8 @@ body {
 .album-section {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
+  gap: 25px;
+  background-color: #181818;
 }
 
 /* Album item */
@@ -141,12 +141,12 @@ body {
 
 @media screen and (max-width: 992px) {
   .album-section {
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns for tablet */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media screen and (max-width: 600px) {
   .album-section {
-    grid-template-columns: repeat(1, minmax(0, 1fr)); /* 1 column for mobile */
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
