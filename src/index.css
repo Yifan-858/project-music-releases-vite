@@ -17,44 +17,40 @@ body {
   background-color: #181818;
 }
 
-/* Resetting default margins and paddings */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Main container */
+.container {
+  margin: 30px;
+}
+
+/* Header */
 .header {
   text-align: center;
-  color: white;
+}
+
+.header h1 {
+  color: #ffffff;
   font-family: Helvetica, Arial, sans-serif;
   padding: 20px;
 }
-/* Main container */
+
+/* Album section */
 .album-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px; /* Add margin around the albums */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 /* Album item */
 .album-item {
   position: relative;
-  width: calc(25% - 40px); /* Show 4 albums per row on desktop */
-  margin-bottom: 40px; /* Increase margin between rows */
-}
-
-@media screen and (max-width: 992px) {
-  .album-item {
-    width: calc(50% - 40px); /* Show 2 albums per row on tablet */
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .album-item {
-    width: calc(100% - 40px); /* Show 1 album per row on mobile */
-  }
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 /* Album cover */
@@ -67,48 +63,60 @@ body {
 }
 
 .album-item:hover img {
-  filter: brightness(0.7); /* Darken the image on hover */
+  filter: brightness(0.7);
 }
 
 /* Icons container */
 .icons {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: opacity 0.3s;
+  opacity: 0;
 }
 
 .album-item:hover .icons {
   opacity: 1;
 }
 
-/* Play, Favorite, and More icons */
-.icon {
+/* Play icon */
+.play {
   display: inline-block;
-  width: 24px;
-  height: 24px;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   margin: 0 5px;
   transition: transform 0.3s;
 }
 
-.icon:hover {
-  transform: scale(1.2); /* Grow the icon on hover */
+.play:hover {
+  transform: scale(1.2);
+}
+
+/* Heart and dot icons */
+.heart, .dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: transform 0.3s;
+}
+
+.heart:hover, .dot:hover {
+  transform: scale(1.2);
 }
 
 /* Album details */
 .album-details {
   position: relative;
-  padding-top: 10px;
 }
 
 /* Album info */
 .album-info {
-  background-color: #181818; /* Background color matching website background */
-  padding: 10px;
+  background-color: #181818;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   overflow: hidden;
@@ -118,17 +126,14 @@ body {
   text-decoration: none;
 }
 
-.album-info h2,
-.album-info p {
-  color: #ffffff; /* Text color */
+.album-info h2, .album-info p {
+  color: #ffffff;
   font-size: 14px;
-  margin-bottom: 5px;
-  background-color: #181818; /* Background color matching website background */
-  padding: 5px 0; /* Adjust padding for better readability */
+  padding: 5px 0;
 }
 
 /* Hover effect on album name and artist name */
 .album-info a:hover {
-  color: white; /* Change text color on hover */
-  text-decoration: underline; /* Add underline on hover */
+  color: white;
+  text-decoration: underline;
 }

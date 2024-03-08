@@ -8,8 +8,7 @@ export const ArtistName = ({ artists }) => {
           <a key={artist.id} href={artist.external_urls.spotify}>
             <p className="artist-name">{artist.name}</p>
           </a>
-          {index < artists.length - 2 && ", "}
-          {index === artists.length - 2 && " and "}
+          {index === artists.length - 2 && " & "}
         </span>
       ))}
     </p>
